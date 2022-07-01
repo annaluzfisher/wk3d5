@@ -1,0 +1,45 @@
+class MyQueue
+
+    def initialize
+        @inner_array = []
+        # wrapping data structure around this array and limiting the use
+        @size = 0
+    end
+
+    def enque(ele)
+        inner_array.unshift(ele)     # ruby looks for local variable "size. "
+        self.size =  size + 1      # none found? size is the reader. size +1  cool
+    end                             # self is needed because it wont go to size= (writer)
+                 #self is needed to make sure we go get the writer instead of declaring a new local variable
+
+    def dequeu(ele)
+        self.size -= 1
+        inner_array.pop(ele)
+    end
+
+    def empty?
+        size == 0
+    end
+
+    def show
+        inner_array.dup
+    end
+
+    private
+    attr_reader :inner_array
+    attr_accessor :size
+end
+
+
+ # we enqueue ,
+ #dequeu
+ #peek or show 
+
+ # public class methods
+ #then public instance methods
+ #then private class methods
+ #then private instance methods
+ # good practice. only declare instance variable once and the interact with it via 
+
+
+ #
